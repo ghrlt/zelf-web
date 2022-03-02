@@ -1,0 +1,108 @@
+:root {
+    --color-white: #fff;
+    --color-white-bg: #e5e5e5;
+    --color-white-disabled: #8d8d8d;
+    --color-black: #000;
+    --color-green: #00ff46;
+    --color-green-active: #00b331;
+    --color-green-disabled: #005417;
+    --color-purple: #f0f;
+    --color-yellow: #ff0;
+    --color-grey-disabled: var(--bs-gray-700);
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.btn-zelf {
+    line-height: 1;
+    padding: 0.9em 2.95em;
+    flex-shrink: 0;
+    background: var(--color-green);
+    border: 2px solid var(--color-green);
+    border-radius: 90px;
+    color: var(--color-black);
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: all .1s ease-out;
+
+    display: inline-block;
+    text-decoration: none;
+
+    cursor: pointer;
+    font-family: Inter,sans-serif;
+}
+.btn-zelf:hover {
+    background:transparent!important;
+    color:var(--color-green)!important
+}
+
+.form-zelf {
+    border: 2px green solid;
+    border-radius: 5px;
+
+    background-color: var(--color-black);
+    caret-color:  var(--color-green);
+    color:  var(--color-white);
+
+    font-family: Inter,sans-serif;
+}
+.form-zelf:focus {
+    outline: 0;
+    border: 2px green solid;
+}
+
+#login-step-two-btn {
+    display: none;
+}
+
+
+.-centered {
+    display: flex!important;
+    justify-content: center!important;
+}
+
+
+.text-disabled {
+    color: var(--color-white-disabled);
+}
+.input-disabled {
+    cursor: default;
+    pointer-events: none;
+
+    border: 2px var(--color-green-disabled) solid;
+}
+.input-disabled::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--color-grey-disabled);
+  opacity: 1; /* Firefox */
+}
+.input-disabled:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--color-grey-disabled);
+}
+.input-disabled::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--color-grey-disabled);
+}
+
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/static/fonts/Inter/Inter-Medium.woff2) format("woff2"),
+         url(/static/fonts/Inter/Inter-Medium.woff) format("woff")
+}
