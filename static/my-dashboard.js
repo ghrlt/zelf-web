@@ -71,6 +71,8 @@ $(function() {
 
 					$("#limit-bonus-text").text(result.data.bonus.used+"€")
 					$("#limit-bonuslimit-text").text(result.data.bonus.limit+"€")
+
+					$("#limits-box").show()
 				}
 			}
 
@@ -141,6 +143,5 @@ $(function() {
 	})
 	$("#limits-btn").on('click', function() {
 		loadAndDisplayCustomerCardLimits()
-		$("#limits-box").show()
 	})
 })
