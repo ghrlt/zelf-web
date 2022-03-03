@@ -118,6 +118,7 @@ def card(action):
 				"cvv": "643"
 			}
 		}
+		# DATA IS OF COURSE NOT REAL ...
 
 		if r.get('error') is None:
 			return {"state": 0, "error": None, "data": r['card']}
