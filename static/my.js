@@ -49,7 +49,7 @@ $(function() {
 				} else {
 					document.cookie = "zelf_token="+result.cookie+"; path=/"
 					console.log(result.cookie)
-					window.location.replace = "/dashboard"
+					window.location.href = "/dashboard"
 				}
 			}
 		})
