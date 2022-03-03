@@ -27,7 +27,7 @@
 				<div class="col col-4">
 					<div class="row">
 						<div class="col">
-							<span>Votre numéro de téléphone :</span>
+							<span id="login-tel-text">Votre numéro de téléphone :</span>
 						</div>
 						<div class="col">
 							<input type="tel" name="ZELF Phone number" placeholder="+33754030808"
@@ -38,19 +38,22 @@
 				<div class="col col-4">
 					<div class="row">
 						<div class="col">
-							<span class="text-disabled">Code de vérification :</span>
+							<span class="text-disabled" id="login-otp-text">Code de vérification :</span>
 						</div>
 						<div class="col">
 							<input type="number" name="ZELF SMS OTP" placeholder="5839"
-									class="form-zelf input-disabled" id="login-otp-input">
+									class="form-zelf input-disabled" id="login-otp-input" tabindex="-1">
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="col col-12 -centered">
-			<a class="btn-zelf" id="login-step-one-btn">Se connecter</a>
-			<a class="btn-zelf" id="login-step-two-btn">Valider la connexion</a>
+			<span class="text-error" id="login-error"></span>
+		</div>
+		<div class="col col-12 -centered">
+			<a class="btn-zelf" id="login-step-one-btn" tabindex="0">Se connecter</a>
+			<a class="btn-zelf" id="login-step-two-btn" tabindex="0">Valider la connexion</a>
 		</div>
 	</div>
 
