@@ -20,6 +20,7 @@ body {
     color: var(--color-white);
 }
 
+
 .btn-zelf {
     line-height: 1;
     padding: 0.9em 2.95em;
@@ -42,6 +43,7 @@ body {
     background:transparent!important;
     color:var(--color-green)!important
 }
+
 .btn-zelf-grey {
     line-height: 1;
     padding: 0.9em 2.95em;
@@ -64,6 +66,7 @@ body {
     background:transparent!important;
     color:var(--color-grey)!important;
 }
+
 .btn-zelf-black {
     line-height: 1;
     padding: 0.9em 2.95em;
@@ -87,6 +90,7 @@ body {
     color:var(--color-white)!important;
 }
 
+
 .form-zelf {
     border: 2px green solid;
     border-radius: 5px;
@@ -100,6 +104,140 @@ body {
 .form-zelf:focus {
     outline: 0;
     border: 2px green solid;
+}
+
+
+
+@media only screen and (max-width: 576px) {
+    .form-zelf {
+        width: -webkit-fill-available;
+    }
+    .hide-on-sm-mobile {
+        display: none!important;
+    }
+    .show-on-sm-mobile {
+        display: initial;
+    }
+    
+
+    .card-details.card-number {
+        top: 32%;
+        left: 7%;
+     
+        font-size: 6vw;
+    }
+    .card-details.card-cvv {
+        top: 56%;
+        left: 75%;
+
+        font-size: 4.5vw;
+    }
+    .card-details.card-expi {
+        top: 56%;
+        left: 6%;
+
+        font-size: 4.5vw;
+    }
+    .card-details.card-holder {
+        top: 85%;
+        left: 3%;
+
+        font-weight: 500;
+        color: white!important;
+        font-size: 3.5vw;
+    }
+
+    .hide-card-details-btn {
+        font-size: 3.5vw;
+        display: none;
+    }
+    .reveal-card-details-btn {
+        font-size: 3.5vw;
+    }
+
+    
+    .card-balance-details-text {
+        font-family: Inter, sans-serif;
+        font-size: 3.79vw;
+    }
+    .card-balance-text, .card-bonus-text {
+        font-weight: 800;
+        font-size: 5vw;
+    }
+
+    .limit-balance-details-text, .limit-bonus-details-text {
+        font-family: Inter, sans-serif;
+        font-size: 4vw;
+    }
+
+    .small-action-btn-text {
+        font-size: 3.5vw;
+    }
+}
+@media only screen and (min-width: 577px) {
+    .hide-on-sm-mobile {
+        display: initial;
+    }
+    .show-on-sm-mobile {
+        display: none!important;
+    }
+
+
+    .card-details.card-number {
+        top: 32%;
+        left: 9%;
+     
+        font-size: 2.5vw;
+    }
+    .card-details.card-cvv {
+        top: 57%;
+        left: 75%;
+
+        font-size: 2vw;
+    }
+    .card-details.card-expi {
+        top: 57%;
+        left: 6%;
+
+        font-size: 2vw;
+    }
+    .card-details.card-holder {
+        top: 85%;
+        left: 3%;
+
+        font-weight: 500;
+        color: white!important;
+        font-size: 1.5vw;
+    }
+
+    .hide-card-details-btn {
+        font-size: 2vw;
+        display: none;
+    }
+    .reveal-card-details-btn {
+        font-size: 2vw;
+    }
+
+
+    .card-balance-details-text {
+        font-family: Inter, sans-serif;
+        font-size: 1.6vw;
+    }
+    .card-balance-text, .card-bonus-text {
+        font-weight: 800;
+        font-size: 1.9vw;
+    }
+
+    .limit-balance-details-text, .limit-bonus-details-text {
+        font-family: Inter, sans-serif;
+        font-size: 1.9vw;
+    }
+
+    .small-action-btn-text {
+        font-size: 1.4vw;
+    }
+
+
 }
 
 #login-step-two-btn {
@@ -134,70 +272,21 @@ body {
 
     cursor: pointer;
 }
-.card-details#card-number {
-    top: 32%;
-    left: 9%;
- 
-    font-size: 2.5vw;
-}
-.card-details#card-cvv {
-    top: 57%;
-    left: 75%;
-
-    font-size: 2vw;
-}
-.card-details#card-expi {
-    top: 57%;
-    left: 6%;
-
-    font-size: 2vw;
-}
-.card-details#card-holder {
-    top: 85%;
-    left: 3%;
-
-    font-weight: 500;
-    color: white!important;
-    font-size: 1.5vw;
-}
-
-#hide-card-details-btn {
-    font-size: 2vw;
-    display: none;
-}
-#reveal-card-details-btn {
-    font-size: 2vw;
-}
-
-.card-balance-details-text {
-    font-family: Inter, sans-serif;
-    font-size: 1.6vw;
-}
-#card-balance-text, #card-bonus-text {
-    font-weight: 800;
-    font-size: 1.9vw;
-}
-
-.limit-balance-details-text, .limit-bonus-details-text {
-    font-family: Inter, sans-serif;
-    font-size: 1.9vw;
-}
 
 
-#limits-box {
+
+
+.limits-box {
     display: none;
 }
 
 
-.small-action-btn-text {
-    font-size: 1.4vw;
-}
 
 
 
 
 .-centered {
-    display: flex!important;
+    display: flex;
     justify-content: center!important;
 }
 

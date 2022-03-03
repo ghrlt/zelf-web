@@ -27,8 +27,11 @@
 		</div>
 		<div class="col col-8">
 			<div>
-				<span class="font-sg fs-2">
-					Bonjour <span id="customer-fn"></span> <span id="customer-ln"></span>
+				<span class="font-sg fs-2 hide-on-sm-mobile">
+					Bonjour <span class="customer-fn"></span> <span class="customer-ln"></span>
+				</span>
+				<span class="font-sg fs-6 show-on-sm-mobile">
+					Bonjour <span class="customer-fn"></span> <span class="customer-ln"></span>
 				</span>
 			</div>
 		</div>
@@ -41,35 +44,35 @@
 		<!-- <br> -->
 		<div class="col col-12 py-3"><div></div></div>
 
-		<div class="col col-1"><div></div></div>
-		<div class="col col-5">
+		<div class="col col-1 hide-on-sm-mobile"><div></div></div>
+		<div class="col col-5 hide-on-sm-mobile">
 			<div class="box">
 				<div style="position: relative; width: fit-content;">	
 					<img src="{{url_for('static', filename='img/card.svg')}}" style="width: 35vw;">
-					<span id="card-number" class="card-details"></span>
-					<span id="card-cvv" class="card-details"></span>
-					<span id="card-expi" class="card-details"></span>
-					<span id="card-holder" class="card-details"></span>
+					<span class="card-details card-number"></span>
+					<span class="card-details card-cvv"></span>
+					<span class="card-details card-expi"></span>
+					<span class="card-details card-holder"></span>
 				</div>
 				<div>
-					<a class="btn-zelf-grey" id="reveal-card-details-btn">
+					<a class="btn-zelf-grey reveal-card-details-btn">
 						<i class="fa-solid fa-eye pe-2"></i>
 						Révéler les numéros
 					</a>
-					<a class="btn-zelf-grey" id="hide-card-details-btn">
+					<a class="btn-zelf-grey hide-card-details-btn">
 						<i class="fa-solid fa-eye-low-vision pe-2"></i>
 						Cacher les numéros
 					</a>
 				</div>
 			</div>
 		</div>
-		<div class="col col-6">
+		<div class="col col-6 hide-on-sm-mobile">
 			<div class="row -centered">
 				<div class="col col-5 py-2">
 					<div class="box">
 						<div class="row">
 							<div class="col col-12 -centered">
-								<span class="card-balance-details-text" id="card-balance-text"></span>
+								<span class="card-balance-details-text card-balance-text"></span>
 							</div>
 							<div class="col col-12 -centered">
 								<span class="card-balance-details-text">
@@ -84,11 +87,11 @@
 					<div class="box">
 						<div class="row">
 							<div class="col col-12 -centered">
-								<span class="card-balance-details-text" id="card-bonus-text"></span>
+								<span class="card-balance-details-text card-bonus-text"></span>
 							</div>
 							<div class="col col-12 -centered">
 								<span class="card-balance-details-text">
-									<i class="pe-é"><i class="my-zelf-icon"></i></i>
+									<i class="pe-2"><i class="my-zelf-icon"></i></i>
 									Solde de bonus
 								</span>
 							</div>
@@ -104,7 +107,7 @@
 			<div class="row -centered">
 				<div class="col col-4 py-2">
 					<div class="row -centered">
-						<a id="topup-btn" class="btn-zelf-black small-action-btn-text">
+						<a class="topup-btn btn-zelf-black small-action-btn-text">
 							<div class="col col-12 -centered pb-2">
 								<i class="fa-regular fa-1_5x fa-circle-plus"></i>
 							</div>
@@ -116,7 +119,7 @@
 				</div>
 				<div class="col col-4 py-2">
 					<div class="row -centered">
-						<a id="limits-btn" class="btn-zelf-black small-action-btn-text">
+						<a class="limits-btn btn-zelf-black small-action-btn-text">
 							<div class="col col-12 -centered pb-2">
 								<i class="fa-light fa-1_5x fa-chart-pie-simple"></i>
 							</div>
@@ -128,7 +131,7 @@
 				</div>
 				<div class="col col-4 py-2">
 					<div class="row -centered" title="Cette fonctionnalité n'est pas encore disponible !">
-						<a id="cashback-btn" class="btn-zelf-black small-action-btn-text btn-disabled striked">
+						<a class="cashback-btn btn-zelf-black small-action-btn-text btn-disabled striked">
 							<div class="col col-12 -centered pb-2">
 								<i class="fa-regular fa-1_5x fa-coins"></i>
 							</div>
@@ -142,16 +145,16 @@
 
 			<div class="row -centered">
 				<div class="col col-12 py-2">
-					<div class="box" id="limits-box">
+					<div class="box limits-box">
 						<div class="row -centered">
 							<div class="col col-10 -centered">
 								<span class="limit-balance-details-text">
-									<span id="limit-spent-text"></span> dépensés sur <span id="limit-spentlimit-text"></span>
+									<span class="limit-spent-text"></span> dépensés sur <span class="limit-spentlimit-text"></span>
 								</span>
 							</div>
 							<div class="col col-10 -centered">
 								<span class="limit-balance-details-text">
-									<span id="limit-topup-text"></span> rechargés sur <span id="limit-topuplimit-text"></span>
+									<span class="limit-topup-text"></span> rechargés sur <span class="limit-topuplimit-text"></span>
 								</span>
 							</div>
 							<!--
@@ -161,6 +164,130 @@
 								</span>
 							</div>
 							-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col col-12 -centered show-on-sm-mobile">
+			<div class="box">
+				<div style="position: relative; width: fit-content;">	
+					<img src="{{url_for('static', filename='img/card.svg')}}" style="width: 100%;">
+					<span class="card-details card-number"></span>
+					<span class="card-details card-cvv"></span>
+					<span class="card-details card-expi"></span>
+					<span class="card-details card-holder"></span>
+				</div>
+				<div class="-centered">
+					<a class="btn-zelf-grey reveal-card-details-btn">
+						<i class="fa-solid fa-eye pe-2"></i>
+						Révéler les numéros
+					</a>
+					<a class="btn-zelf-grey hide-card-details-btn">
+						<i class="fa-solid fa-eye-low-vision pe-2"></i>
+						Cacher les numéros
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col col-12 py-3 show-on-sm-mobile"></div>
+		<div class="col col-12 -centered show-on-sm-mobile">
+			<div class="row -centered">
+				<div class="col col-6 py-2">
+					<div class="box">
+						<div class="row">
+							<div class="col col-12 -centered">
+								<span class="card-balance-details-text card-balance-text"></span>
+							</div>
+							<div class="col col-12 -centered">
+								<span class="card-balance-details-text">
+									<i class="fa-regular fa-credit-card pe-2"></i>
+									Solde de la carte
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col col-6 py-2">
+					<div class="box">
+						<div class="row">
+							<div class="col col-12 -centered">
+								<span class="card-balance-details-text card-bonus-text"></span>
+							</div>
+							<div class="col col-12 -centered">
+								<span class="card-balance-details-text">
+									<i class="pe-2"><i class="my-zelf-icon"></i></i>
+									Solde de bonus
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col col-12 -centered show-on-sm-mobile py-3">
+			<div class="row -centered" style="width: inherit;">
+				<div class="col col-6 py-2">
+					<div class="row -centered">
+						<a class="topup-btn btn-zelf-black small-action-btn-text">
+							<div class="col col-12 -centered pb-2">
+								<i class="fa-regular fa-1_5x fa-circle-plus"></i>
+							</div>
+							<div class="col col-12 -centered">
+								<span>Recharger</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col col-6 py-2">
+					<div class="row -centered" title="Cette fonctionnalité n'est pas encore disponible !">
+						<a class="cashback-btn btn-zelf-black small-action-btn-text btn-disabled striked">
+							<div class="col col-12 -centered pb-2">
+								<i class="fa-regular fa-1_5x fa-coins"></i>
+							</div>
+							<div class="col col-12 -centered">
+								<span >Cashback</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col col-12 py-2">
+					<div class="row -centered">
+						<a class="limits-btn btn-zelf-black small-action-btn-text">
+							<div class="col col-12 -centered pb-2">
+								<i class="fa-light fa-1_5x fa-chart-pie-simple"></i>
+							</div>
+							<div class="col col-12 -centered">
+								<span >Limites</span>
+							</div>
+						</a>
+					</div>
+
+					<div class="row -centered">
+						<div class="col col-12 py-2">
+							<div class="box limits-box">
+								<div class="row -centered">
+									<div class="col col-10 -centered">
+										<span class="limit-balance-details-text">
+											<span class="limit-spent-text"></span> dépensés sur <span class="limit-spentlimit-text"></span>
+										</span>
+									</div>
+									<div class="col col-10 -centered">
+										<span class="limit-balance-details-text">
+											<span class="limit-topup-text"></span> rechargés sur <span class="limit-topuplimit-text"></span>
+										</span>
+									</div>
+									<!--
+									<div class="col col-10 -centered">
+										<span class="limit-bonus-details-text">
+											<span id="limit-bonus-text"></span> utilisés sur <span id="limit-bonuslimit-text"></span>
+										</span>
+									</div>
+									-->
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
