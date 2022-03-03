@@ -1,6 +1,6 @@
 $(function() {
 	const AUTH_TOKEN = document.cookie.match('(^|;)\\s*' + "zelf_token" + '\\s*=\\s*([^;]+)')?.pop() || ''
-	console.log(AUTH_TOKEN)
+
 
 	function loadAndDisplayPartialCardDetails() {
 		$.ajax({
@@ -39,9 +39,47 @@ $(function() {
 			}
 		})
 	}
+	function loadAndDisplayCustomerCardBalances() {
+		$.ajax({
+			url: "/zelf-api/card/get-balances",
+			method: "GET",
+			data: AUTH_TOKEN,
+			success: function(result) {
+				if (result.status == -1) {
+					alert(result.error)
+				} else {
+					$("#card-balance-text").text(result.data.bank + "€")
+					$("#card-bonus-text").text(result.data.bonus + "€")
+				}
+			}
 
-	loadAndDisplayPartialCardDetails()
+		})
+	}
+	function loadAndDisplayCustomerCardLimits() {
+		$.ajax({
+			url: "/zelf-api/card/get-limits",
+			method: "GET",
+			data: AUTH_TOKEN,
+			success: function(result) {
+				if (result.status == -1) {
+					alert(result.error)
+				} else {
+					$("#limit-spent-text").text(result.data.spending.spent+"€")
+					$("#limit-spentlimit-text").text(result.data.spending.limit+"€")
+					$("#limit-topup-text").text(result.data.topup.topped_up+"€")
+					$("#limit-topuplimit-text").text(result.data.topup.limit+"€")
+
+					$("#limit-bonus-text").text(result.data.bonus.used+"€")
+					$("#limit-bonuslimit-text").text(result.data.bonus.limit+"€")
+				}
+			}
+
+		})
+	}
+
 	loadAndDisplayCustomerInfos()
+	loadAndDisplayPartialCardDetails()
+	loadAndDisplayCustomerCardBalances()
 
 	$("#reveal-card-details-btn").on('click', function() {		
 		$.ajax({
@@ -83,5 +121,26 @@ $(function() {
 			document.execCommand("copy")
 			temp.remove()
 		})
+	})
+
+
+	$("#topup-btn").on('click', function() {
+		$.ajax({
+			url: "/zelf-api/card/request-topup-link",
+			method: "GET",
+			data: AUTH_TOKEN,
+			success: function(result) {
+				if (result.state == -1) {
+					alert(result.error)
+				} else {
+					window.open(result.data, '_blank').focus();
+				}
+			}
+
+		})
+	})
+	$("#limits-btn").on('click', function() {
+		loadAndDisplayCustomerCardLimits()
+		$("#limits-box").show()
 	})
 })

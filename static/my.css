@@ -3,6 +3,9 @@
     --color-white-bg: #e5e5e5;
     --color-white-disabled: #8d8d8d;
     --color-black: #000;
+    --color-black2: #181a1c;
+    --color-black2-disabled: #191a1c;
+    --color-black2-transparent: #181a1ca8;
     --color-green: #00ff46;
     --color-green-active: #00b331;
     --color-green-disabled: #005417;
@@ -59,7 +62,29 @@ body {
 }
 .btn-zelf-grey:hover {
     background:transparent!important;
-    color:var(--color-grey)!important
+    color:var(--color-grey)!important;
+}
+.btn-zelf-black {
+    line-height: 1;
+    padding: 0.9em 2.95em;
+    flex-shrink: 0;
+    background: var(--color-black2);
+    border: 2px solid var(--color-black2);
+    border-radius: 90px;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: all .1s ease-out;
+
+    display: inline-block;
+    text-decoration: none;
+
+    cursor: pointer;
+    font-family: Inter,sans-serif;
+}
+.btn-zelf-black:hover {
+    background: var(--color-black2-transparent)!important;
+    color:var(--color-white)!important;
 }
 
 .form-zelf {
@@ -137,11 +162,35 @@ body {
 }
 
 #hide-card-details-btn {
-    font-size: 2.1vw;
+    font-size: 2vw;
     display: none;
 }
 #reveal-card-details-btn {
-    font-size: 2.1vw;
+    font-size: 2vw;
+}
+
+.card-balance-details-text {
+    font-family: Inter, sans-serif;
+    font-size: 1.6vw;
+}
+#card-balance-text, #card-bonus-text {
+    font-weight: 800;
+    font-size: 1.9vw;
+}
+
+.limit-balance-details-text, .limit-bonus-details-text {
+    font-family: Inter, sans-serif;
+    font-size: 1.9vw;
+}
+
+
+#limits-box {
+    display: none;
+}
+
+
+.small-action-btn-text {
+    font-size: 1.4vw;
 }
 
 
@@ -152,12 +201,23 @@ body {
     justify-content: center!important;
 }
 
+.my-zelf-icon {
+    width: 1.2em;
+    height: 1.2em;
+    display: inline-block;
+    background-image: url(/static/img/logo.png);
+    background-size: cover;
+    margin-bottom: -3px;
+
+}
+
 .text-error {
     color:  var(--bs-danger);
 }
 .text-disabled {
     color: var(--color-white-disabled);
 }
+
 .input-disabled {
     cursor: default;
     pointer-events: none;
@@ -175,9 +235,42 @@ body {
   color: var(--color-grey-disabled);
 }
 
+.btn-disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+
+    background-color: var(--color-black2-disabled)!important;
+}
+
 
 .row-no-gutter {
     --bs-gutter-x: 0!important;
+}
+
+.fa-1_5x {
+    font-size: 1.5em;
+}
+
+
+/* Adapted from https://stackoverflow.com/a/26186450 */
+.striked {
+  text-decoration: none;
+
+  position: relative;
+  display: inline-block;
+}
+.striked:after {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  border-top: 1px solid red;
+
+  height: 45%;
+  height: calc(50% - 1px); /* Not compatible with IE 8 */
+  width: 98%;
+  transform: rotateZ(-15deg);
 }
 
 
