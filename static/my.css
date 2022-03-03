@@ -8,6 +8,7 @@
     --color-green-disabled: #005417;
     --color-purple: #f0f;
     --color-yellow: #ff0;
+    --color-grey: var(--bs-gray-300);
     --color-grey-disabled: var(--bs-gray-700);
 }
 
@@ -38,6 +39,28 @@ body {
     background:transparent!important;
     color:var(--color-green)!important
 }
+.btn-zelf-grey {
+    line-height: 1;
+    padding: 0.9em 2.95em;
+    flex-shrink: 0;
+    background: var(--color-grey-disabled);
+    border: 2px solid var(--color-grey-disabled);
+    border-radius: 90px;
+    color: var(--color-grey);
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: all .1s ease-out;
+
+    display: inline-block;
+    text-decoration: none;
+
+    cursor: pointer;
+    font-family: Inter,sans-serif;
+}
+.btn-zelf-grey:hover {
+    background:transparent!important;
+    color:var(--color-grey)!important
+}
 
 .form-zelf {
     border: 2px green solid;
@@ -59,12 +82,79 @@ body {
 }
 
 
+.box {
+    display: block;
+
+    width: 95%;
+    height: 95%;
+
+    background-color: #20202082;
+    
+    border-radius: 5px;
+    box-shadow: 0 20px 30px 3px rgb(0 0 0 / 55%);
+}
+
+#customer-pp {
+    width: 100%;
+    height: auto;
+    border-radius: 150px;
+}
+
+.card-details {
+    position: absolute;
+    color: black;
+    font-family: Ocra,Arial,sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+.card-details#card-number {
+    top: 32%;
+    left: 9%;
+ 
+    font-size: 2.5vw;
+}
+.card-details#card-cvv {
+    top: 57%;
+    left: 75%;
+
+    font-size: 2vw;
+}
+.card-details#card-expi {
+    top: 57%;
+    left: 6%;
+
+    font-size: 2vw;
+}
+.card-details#card-holder {
+    top: 85%;
+    left: 3%;
+
+    font-weight: 500;
+    color: white!important;
+    font-size: 1.5vw;
+}
+
+#hide-card-details-btn {
+    font-size: 2.1vw;
+    display: none;
+}
+#reveal-card-details-btn {
+    font-size: 2.1vw;
+}
+
+
+
+
 .-centered {
     display: flex!important;
     justify-content: center!important;
 }
 
-
+.text-error {
+    color:  var(--bs-danger);
+}
 .text-disabled {
     color: var(--color-white-disabled);
 }
@@ -86,6 +176,10 @@ body {
 }
 
 
+.row-no-gutter {
+    --bs-gutter-x: 0!important;
+}
+
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -98,6 +192,18 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.font-sg {
+    font-family: SpaceGrotesk, sans-serif;
+}
+@font-face {
+    font-family: SpaceGrotesk;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src:  url(/static/fonts/SpaceGrotesk/SpaceGrotesk-Medium.woff2) format("woff2"),
+          url(/static/fonts/SpaceGrotesk/SpaceGrotesk-Medium.woff) format("woff")
+}
+
 @font-face {
     font-family: Inter;
     font-style: normal;
@@ -105,4 +211,13 @@ input[type=number] {
     font-display: swap;
     src: url(/static/fonts/Inter/Inter-Medium.woff2) format("woff2"),
          url(/static/fonts/Inter/Inter-Medium.woff) format("woff")
+}
+
+@font-face {
+    font-family: Ocra;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src:  url(/static/fonts/Ocra/ocra.otf) format("opentype");
+}
 }
