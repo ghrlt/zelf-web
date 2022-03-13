@@ -10,4 +10,3 @@ class ZelfCustomApi:
 # TODO: Refacto app.py from ghrlt/zelf-private-api
 # NEEDED: being able to simulate a client and thus, go through the SCRAM auth
 
-
